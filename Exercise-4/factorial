@@ -1,0 +1,43 @@
+Factorial.java
+package factorial;
+
+public class Factorial {
+
+    public int factorial(int n) {
+
+        int fact = 1;
+
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+
+        return fact;
+    }
+}
+
+MyFunction.java
+package factorial;
+
+@FunctionalInterface
+public interface MyFunction {
+
+    int calculate(int n);
+}
+
+Main.java
+package factorial;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Factorial obj = new Factorial();
+
+        MyFunction function = obj::factorial;
+
+        int result = function.calculate(5);
+
+        System.out.println("URK23CS1114" );
+        System.out.println("Factorial = " + result);
+    }
+}

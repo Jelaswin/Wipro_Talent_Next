@@ -1,0 +1,128 @@
+Q1:
+Foundation.java
+
+public class foundation {
+    private int var1 = 10;
+    int var2 = 20;
+    protected int var3 = 30;
+    public int var4 = 40;
+}
+Accesstest.java
+package test2;
+import test.foundation;
+public class AccessTest {
+    public static void main(String[] args) {
+        foundation obj = new foundation();
+        System.out.println("URK23CS1114");
+        // System.out.println(obj.var1);  // ERROR - private
+        // System.out.println(obj.var2);  // ERROR - default
+        // System.out.println(obj.var3);  // ERROR - protected
+        System.out.println(obj.var4);    
+    }
+}
+
+Q2:
+Vehicle.java
+package com.automobiles;
+
+public abstract class Vehicle {
+
+    public abstract String getModelName();
+
+    public abstract String getRegistrationNumber();
+
+    public abstract String getOwnerName();
+}
+Hero.java
+package com.automobiles.twowheeler;
+
+import com.automobiles.Vehicle;
+
+public class Hero extends Vehicle {
+
+    @Override
+    public String getModelName() {
+        return "Hero Splendor";
+    }
+
+    @Override
+    public String getRegistrationNumber() {
+        return "TN01AB1234";
+    }
+
+    @Override
+    public String getOwnerName() {
+        return "Akshitha";
+    }
+
+    public int getSpeed() {
+        return 80;
+    }
+
+    public void radio() {
+        System.out.println("Hero: Radio device is being controlled.");
+    }
+}
+Honda.java
+package com.automobiles.twowheeler;
+
+import com.automobiles.Vehicle;
+
+public class Honda extends Vehicle {
+
+    @Override
+    public String getModelName() {
+        return "Honda Activa";
+    }
+
+    @Override
+    public String getRegistrationNumber() {
+        return "TN02CD5678";
+    }
+
+    @Override
+    public String getOwnerName() {
+        return "Rahul";
+    }
+
+    public int getSpeed() {
+        return 90;
+    }
+
+    public void cdplayer() {
+        System.out.println("Honda: CD player is being controlled.");
+    }
+}
+TestVehicle.java
+package com.automobiles.vehicle;
+
+import com.automobiles.twowheeler.Hero;
+import com.automobiles.twowheeler.Honda;
+
+public class TestVehicle {
+
+    public static void main(String[] args) {
+
+        Hero hero = new Hero();
+
+        System.out.println("----- HERO -----");
+        System.out.println("Model Name: " + hero.getModelName());
+        System.out.println("Registration Number: " + hero.getRegistrationNumber());
+        System.out.println("Owner Name: " + hero.getOwnerName());
+        System.out.println("Speed: " + hero.getSpeed());
+
+        hero.radio();
+
+        System.out.println();
+
+        Honda honda = new Honda();
+
+        System.out.println("----- HONDA -----");
+        System.out.println("Model Name: " + honda.getModelName());
+        System.out.println("Registration Number: " + honda.getRegistrationNumber());
+        System.out.println("Owner Name: " + honda.getOwnerName());
+        System.out.println("Speed: " + honda.getSpeed());
+
+        honda.cdplayer();
+    }
+}

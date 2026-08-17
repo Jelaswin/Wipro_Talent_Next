@@ -1,0 +1,30 @@
+Q1.
+package employee;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class EmployeeNames {
+
+    public static void main(String[] args) {
+
+        // Create HashSet
+        HashSet<String> employeeNames = new HashSet<>();
+
+        
+        employeeNames.add("Akshitha");
+        employeeNames.add("Rahul");
+        employeeNames.add("Priya");
+        employeeNames.add("Anjali");
+        employeeNames.add("URK23CS1114");
+
+        // Create Iterator
+        Iterator<String> iterator = employeeNames.iterator();
+
+        // Retrieve elements one by one
+        while (iterator.hasNext()) {
+            String name = iterator.next();
+            System.out.println(name);
+        }
+    }
+}

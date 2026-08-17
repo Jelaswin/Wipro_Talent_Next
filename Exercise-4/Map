@@ -1,0 +1,56 @@
+Q1.
+package hashmap;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class HashMapExample {
+
+    public static void main(String[] args) {
+
+        // Create HashMap
+        HashMap<String, String> map = new HashMap<>();
+
+        // Add String objects
+        map.put("101", "Akshitha");
+        map.put("102", "Rahul");
+        map.put("103", "Priya");
+        map.put("104", "Karthik");
+
+        
+        String key = "102";
+
+        if (map.containsKey(key)) {
+            System.out.println("Key " + key + " exists.");
+        } else {
+            System.out.println("Key " + key + " does not exist.");
+        }
+
+       
+        String value = "Priya";
+
+        if (map.containsValue(value)) {
+            System.out.println("Value " + value + " exists.");
+        } else {
+            System.out.println("Value " + value + " does not exist.");
+        }
+
+        
+        System.out.println("URK23CS1114");
+        System.out.println("\nHashMap elements:");
+
+        Iterator<Map.Entry<String, String>> iterator =
+                map.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+
+            Map.Entry<String, String> entry = iterator.next();
+
+            System.out.println(
+                "Key: " + entry.getKey() +
+                ", Value: " + entry.getValue()
+            );
+        }
+    }
+}

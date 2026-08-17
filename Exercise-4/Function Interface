@@ -1,0 +1,41 @@
+package FunctionalInterface;
+
+import java.util.ArrayList;
+
+public class PerfectSquare {
+
+    public static void main(String[] args) {
+
+        
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(10);
+        numbers.add(4);
+        numbers.add(15);
+        numbers.add(25);
+        numbers.add(7);
+        numbers.add(36);
+        numbers.add(20);
+        numbers.add(49);
+        numbers.add(8);
+        numbers.add(16);
+
+        ArrayList<Integer> perfectSquares = new ArrayList<>();
+
+        for (Integer n : numbers) {
+
+            int root = (int) Math.sqrt(n);
+
+            if (root * root == n) {
+                perfectSquares.add(n);
+            }
+        }
+        
+        System.out.println("URK23CS1114");
+        System.out.println("Perfect square numbers:");
+
+        for (Integer n : perfectSquares) {
+            System.out.println(n);
+        }
+    }
+}

@@ -1,0 +1,110 @@
+Q1.
+CharacterCount.java
+package ex4;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class CharacterCount {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("URK23CS1114");
+        System.out.println("Enter the file name");
+        String fileName = sc.nextLine();
+
+        System.out.println("Enter the character to be counted");
+        char target = sc.nextLine().toLowerCase().charAt(0);
+
+        int count = 0;
+
+        try {
+            FileReader file = new FileReader(fileName);
+
+            int ch;
+
+            while ((ch = file.read()) != -1) {
+
+                char currentChar = Character.toLowerCase((char) ch);
+
+                if (currentChar == target) {
+                    count++;
+                }
+            }
+
+            file.close();
+
+            System.out.println("File '" + fileName + "' has " 
+                    + count + " instances of letter '" + target + "'.");
+
+        } catch (IOException e) {
+            System.out.println("File not found or cannot be read.");
+        }
+
+        sc.close();
+    }
+}
+Input.txt
+Java is a programming language.
+Reading a file in Java is easy.
+
+Q2.
+Filewordcount.java
+package ex4;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class FileWordCount {
+
+    public static void main(String[] args) {
+
+        String inputFile = "Input.txt";
+        String outputFile = "outputFile.txt";
+
+        Map<String, Integer> wordCount = new TreeMap<>();
+
+        try {
+            Scanner fileScanner = new Scanner(new File(inputFile));
+
+            while (fileScanner.hasNext()) {
+
+                String word = fileScanner.next();
+
+                if (wordCount.containsKey(word)) {
+                    wordCount.put(word, wordCount.get(word) + 1);
+                } else {
+                    wordCount.put(word, 1);
+                }
+            }
+
+            fileScanner.close();
+
+            PrintWriter writer = new PrintWriter(outputFile);
+
+            for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+                writer.println(entry.getKey() + " : " + entry.getValue());
+            }
+
+            writer.close();
+
+            System.out.println("Word count written to " + outputFile);
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+        }
+    }
+}
+Input.txt
+Manoj works at Wipro
+Katari works at Wipro
+Sureka works at Wipro
+Harish works at Wipro
+Anitha works at Wipro
+Janani works at Wipro

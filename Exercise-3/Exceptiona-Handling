@@ -1,0 +1,85 @@
+Q1.
+package com.exceptionhandling;
+
+import java.util.Scanner;
+
+public class ArrayException {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("URK23CS1114");
+
+        try {
+            System.out.println("Enter the number of elements in the array:");
+            int n = sc.nextInt();
+
+            int[] arr = new int[n];
+            
+            
+            System.out.println("Enter the elements in the array:");
+
+            for (int i = 0; i < n; i++) {
+                arr[i] = Integer.parseInt(sc.next());
+            }
+            
+
+            System.out.println("Enter the index of the array element you want to access:");
+            int index = Integer.parseInt(sc.next());
+
+            System.out.println("The array element at index " + index + " = " + arr[index]);
+            System.out.println("The array element successfully accessed");
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e);
+
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+
+        sc.close();
+    }
+}
+
+Q2.
+InvalidcountryException
+package com.exceptionhandling;
+
+public class InvalidCountryException extends Exception {
+
+    public InvalidCountryException() {
+        super();
+    }
+
+    public InvalidCountryException(String message) {
+        super(message);
+    }
+}
+
+UserRegistration.java
+package com.exceptionhandling;
+
+public class UserRegistration {
+
+    public static void registerUser(String username, String userCountry)
+            throws InvalidCountryException {
+    	
+    	System.out.println("URK23CS1114");
+        if (!userCountry.equals("India")) {
+            throw new InvalidCountryException(
+                "User Outside India cannot be registered"
+            );
+        } else {
+            System.out.println("User registration done successfully");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        try {
+            registerUser("Mickey", "US");
+        } catch (InvalidCountryException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
