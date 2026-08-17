@@ -4,7 +4,7 @@ public class NumericWrapper {
 
     public static void main(String[] args) {
     	
-    	System.out.println("URK23CS1114");
+    	
         System.out.println("Integer range:");
         System.out.println("min: " + Integer.MIN_VALUE);
         System.out.println("max: " + Integer.MAX_VALUE);

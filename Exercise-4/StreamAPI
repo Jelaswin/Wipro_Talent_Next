@@ -17,7 +17,7 @@ public class NegativeEven {
                 negativeEven.add(n);
             }
         }
-        System.out.println("URK23CS1114");
+        
         System.out.println("Negative even numbers:");
         for (Integer n : negativeEven) {
             System.out.println(n);

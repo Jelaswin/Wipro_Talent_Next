@@ -31,7 +31,7 @@ public class PerfectSquare {
             }
         }
         
-        System.out.println("URK23CS1114");
+        
         System.out.println("Perfect square numbers:");
 
         for (Integer n : perfectSquares) {

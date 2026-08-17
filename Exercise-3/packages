@@ -13,7 +13,7 @@ import test.foundation;
 public class AccessTest {
     public static void main(String[] args) {
         foundation obj = new foundation();
-        System.out.println("URK23CS1114");
+        
         // System.out.println(obj.var1);  // ERROR - private
         // System.out.println(obj.var2);  // ERROR - default
         // System.out.println(obj.var3);  // ERROR - protected

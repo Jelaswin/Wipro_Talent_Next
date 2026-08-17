@@ -16,7 +16,7 @@ public class EmployeeNames {
         employeeNames.add("Rahul");
         employeeNames.add("Priya");
         employeeNames.add("Anjali");
-        employeeNames.add("URK23CS1114");
+        
 
         // Create Iterator
         Iterator<String> iterator = employeeNames.iterator();

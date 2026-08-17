@@ -13,7 +13,7 @@ public class PrimeNumbers {
             33, 13, 16, 27, 41
         ));
         
-        System.out.println("URK23CS1114");
+        
         System.out.println("Prime numbers:");
 
         

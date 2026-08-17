@@ -109,7 +109,7 @@ public class Main {
         );
 
         // Adding employees
-        System.out.println("URK23CS1114");
+        
         System.out.println("Employee 1 added : " + db.addEmployee(e1));
         System.out.println("Employee 2 added : " + db.addEmployee(e2));
         System.out.println("Employee 3 added : " + db.addEmployee(e3));
@@ -171,7 +171,7 @@ public class StringList {
     public static void main(String[] args) {
 
         StringList obj = new StringList();
-        obj.add("URK23CS8010");
+        
         obj.add("Java");
         obj.add("Python");
         obj.add("C");
